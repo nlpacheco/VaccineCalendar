@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VaccineCalendar.Views.FamilyPage"
+             Title="{Binding Title}"
+             x:Name="FamilyPage"
+             xmlns:converters="clr-namespace:VaccineCalendar.Converter">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DateToAgeConverter x:Key="dateToAge" />
+            <converters:DateToStringConverter x:Key="dateToStr" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Incluir" Clicked="IncluirPessoa_clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding ResponsibleUserName}" FontSize="Small"/>
+            <Label Text="Pessoas da Família:" FontSize="Medium" />
+            <StackLayout>
+                <ListView x:Name="FamilyListView" 
+                    ItemsSource="{Binding FamilyPeople}"
+                    VerticalOptions="FillAndExpand"
+                    HasUnevenRows="true"
+                    RefreshCommand="{Binding LoadItemsCommand}"
+                    IsPullToRefreshEnabled="true"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    CachingStrategy="RecycleElement"
+                    ItemSelected="OnItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" 
+                                        LineBreakMode="NoWrap"   
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="16" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Data Nasc.:" FontSize="13"/>
+                                        <Label Text="{Binding BirthDate, Converter={StaticResource dateToStr}}" 
+                                                LineBreakMode="NoWrap"
+                                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                                FontSize="13" />
+                                    </StackLayout>
+                                    
+                                    <Label Text="{Binding BirthDate, Converter={StaticResource dateToAge}}"  />
+                                    <Label Text="{Binding IdadeTexto}" 
+                                        LineBreakMode="NoWrap"
+                                        Style="{DynamicResource ListItemDetailTextStyle}"
+                                        FontSize="13" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

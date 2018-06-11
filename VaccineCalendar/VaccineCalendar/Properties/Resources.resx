@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BCG" xml:space="preserve">
+    <value>Esta vacina protege contra a tuberculose. Esta vacina deve ser aplicada no recém-nascido preferencialmente ainda na maternidade.
+A vacina quase sempre deixa uma cicatriz característica, com até 1 cm de diâmetro, no local em que foi aplicada. Essa reação é esperada! A marca pode demorar até 6 meses para começas a aparecer.
+</value>
+  </data>
+  <data name="Febre_Amarela" xml:space="preserve">
+    <value>Doençca infecciosa causada por um vírus e transmitida por mosquito. 
+Os principais sintomas são febre, calafrios, náusea, fraqueza. Os casos graves evoluem com icterícia (cor amarela da pele e olhos) quando afeta o fígado, hemorragia e morte em muitos casos (20% a 50% dos que desenvolvem a forma grave.</value>
+  </data>
+  <data name="Gripe" xml:space="preserve">
+    <value>A Influenza ou Gripe é uma infecção aguda do sistema respiratório, ocasionada pelo vírus influenza, com elevado potencial de transmissão.
+Para 2018, a Organização Mundial da Saúde definiu a composição da vacina com duas cepas de influenza A (H1N1 e H3N2) e uma linhagem de influenza B.</value>
+  </data>
+  <data name="Hepatite_A" xml:space="preserve">
+    <value>Hepatite A é uma doença infecciosa aguda causada pelo vírus VHA. A transmisssão é por falta de higiênie ou falta de saneamento básico. 
+Em geral a pessoa não apresenta sintomas sérios. Porém, em alguns casos, porém a infecção causar sintomas clássicos como febre, dores musculares e náuseas. Quando há complicações, o fígado é afetado causando  icterícia (cor amarela da pele e olhos) e muito raramente, hepatite fulminante.</value>
+  </data>
+  <data name="HEPATITE_B" xml:space="preserve">
+    <value>A Hepatite B é uma doença grave que é causada por um vírus que prefere se instalar no fígado causando a sua inflamação. Em alguns casos pode haver complicações e em poucos casos pode causar morte.
+A primeira dose deve ser aplicada nas primeiras 12 horas de vida. A dose deve ser repetida com 2 meses e 6 meses.
+Se usar formas combinadas de vacina, pode-se usar o esquema de 4 aplicações: ao nascer (vacina única), 3x  DTPw-HB-Hib ou DTPa--HB-VIP-Hib</value>
+  </data>
+  <data name="Hib" xml:space="preserve">
+    <value>A vacina Haemophilus Influenzae B (Hib) protege contra uma bactéria que causa infecção que pode ser espalhar por diversas partes do corpo. As complicações podem causar pneumonia, meningite entre outras.
+Esta vacina deve ser tomada em 4 doses: 2 meses, 4 meses, 6 meses e reforço aos 15 meses. Os postos de saúde não fornecem o reforço, infelizmente.</value>
+  </data>
+  <data name="Meningocócicas_Conjugadas" xml:space="preserve">
+    <value>Meningite meningocócica (infecção das membranas que recobrem o cérebro) certamente está entre as doenças imunopreveníveis mais temidas. Ela é causada pela bactéria Neisseria meningitidis (meningococo) e é mais grave quando atinge a corrente sanguínea, provocando infecção generalizada (meningococcemia).
+Cinco tipos (sorogrupos) de meningococo causam a maioria dos casos de DM. São eles: A, B, C, W e Y. O meningococo C é o mais comum e foi responsável por 70% dos casos da doença.
+As vacinas deste grupo não previnem o tipo B.</value>
+  </data>
+  <data name="Meningocócica_B" xml:space="preserve">
+    <value>Vacina para o meningococo B bem menos frequente que o C que também causa meningite meningocócica.
+Representa 20% dos casos registrados.</value>
+  </data>
+  <data name="Pneumocócica_Conjugada" xml:space="preserve">
+    <value>A vacina ajuda a proteger as crianças das doenças causadas pela bactéria Streptococcus pneumoniae. Entre elas estão: meningite, pneumonia, otite média aguda, sinusite e bacteremia.</value>
+  </data>
+  <data name="Poliomielite" xml:space="preserve">
+    <value>A Poliomielite é uma doença muito grave causada pelo  Poliovírus. Nos casos mais graves, o poliovírus destrói as células nervosas da medula espinhal causando paralisia.
+As 3 primeiras doses devem ser VIP (vacina inativada poliomielite) injetável. As doses de reforço podem ser as famosas gotinhas - VOP (vacina oral poliomielite) mas recomenda-se manter a VIP.
+</value>
+  </data>
+  <data name="Rotavírus" xml:space="preserve">
+    <value>O rotavírus causa diarreia grave, frequentemente acompanhada de febre e vômitos. É, hoje, considerado um dos mais importantes agentes causadores de gastroenterites e óbitos em crianças menores de 5 anos, em todo o mundo.
+Temos 2 tipos de vacinas ambas via oral (gotinha): 
+	1. Vacina oral monovalente (VRH1): tem um tipo de vírus enfraquecido. Se esta vacina for usada, duas doses devem ser aplicadas nos bebês.
+	2. Vacina oral atenuada pentavalente (VR5): é formada por cinco tipos de rotavírus vivos “enfraquecidos”. Se esta vacina  for utilizada, devem ser aplicadas 3 doses nos bebês.
+Esta é uma daquelas vacinas que tem datas muito rigorosas para tomar. Por exemplo, se o bebê não tomar até 3 meses e 15 dias, a vacina não poderá ser mais aplicada.</value>
+  </data>
+  <data name="Tríplice_Bacteriana" xml:space="preserve">
+    <value>As vacinas tríplices bacterianas protegem o bebê contra difteria, coqueluche e tétano.
+Temos 3 tipos de vacinas diferentes 
+	1. DTPw que é feita a partir de células inteiras da bactéria.  
+	2. DTPa não é feita com as células inteiras, mas só com proteínas. Elas causam menos efeitos colaterais, mas só está disponível nas clínicas particulares. 
+	3. A vacina dTpa é a formulação para adultos.
+Com o aumento da coqueluche no Brasil nos últimos anos é importante que ela seja aplicada nas gestantes (entre 27 a 36 semanas) e nas pessoas mais próximas para proteger os recém-nascidos.
+Esta vacina deve ser tomada em 5 doses: 2 meses, 4 meses, 6 meses e reforço aos 15 meses e entre os 4 e 6 anos.</value>
+  </data>
+</root>

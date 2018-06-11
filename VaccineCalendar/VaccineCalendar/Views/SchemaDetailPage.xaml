@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VaccineCalendar.Views.SchemaDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="SchemaList"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="true"
+                      IsGroupingEnabled="true"
+                      GroupDisplayBinding="{Binding Heading}"
+                      GroupShortNameBinding="{Binding Heading}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding VaccineTypeGroup}" FontSize="Micro"/>
+                                    <Label Text="a. Alternativa" FontSize="Micro"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding DateName}" FontSize="Micro"/>
+                                    <Label Text=": " FontSize="Micro"/>
+                                    <Label Text="{Binding DoseName}" FontSize="Micro"/>
+                                    <Label Text=": " FontSize="Micro"/>
+                                    <Label Text="{Binding VaccineTypeName}" FontSize="Micro"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

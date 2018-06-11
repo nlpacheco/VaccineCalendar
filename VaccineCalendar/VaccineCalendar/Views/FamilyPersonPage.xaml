@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VaccineCalendar.Views.FamiliPersonPage"
+             xmlns:converters="clr-namespace:VaccineCalendar.Converter">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DateToAgeConverter x:Key="dateToAge" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="5">
+                
+                <Label Text="Nome: " FontSize="Small" />
+                <Entry Text="{Binding Name}" FontSize="Small" Placeholder="Nome nova pessoa"/>
+                
+                <Label Text="Dt. Nasc.: " FontSize="Small" />
+                <DatePicker x:Name="birthDatePicker"
+                            Date="{Binding BirthDate}"
+                            MaximumDate= "{Binding Today}"
+                            Format="D"
+                            Margin="30, 0, 0, 30"/>
+
+                <Label Text="{Binding Source={x:Reference birthDatePicker}, Path=Date, Converter={StaticResource dateToAge}}" FontSize="Small" />
+                <Button Text="Salvar" Command="{Binding SaveItemCommand}" />
+                <Button Text="Cancelar" Clicked="Button_Clicked" />
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
