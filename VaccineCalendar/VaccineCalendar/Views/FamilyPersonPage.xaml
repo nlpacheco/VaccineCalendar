@@ -4,6 +4,8 @@
              x:Class="VaccineCalendar.Views.FamiliPersonPage"
              xmlns:converters="clr-namespace:VaccineCalendar.Converter">
     <ContentPage.Resources>
+        <StyleSheet Source="/Vaccine.css" />
+
         <ResourceDictionary>
             <converters:DateToAgeConverter x:Key="dateToAge" />
         </ResourceDictionary>
@@ -11,21 +13,37 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="5">
+            <StackLayout Padding="1">
                 
-                <Label Text="Nome: " FontSize="Small" />
-                <Entry Text="{Binding Name}" FontSize="Small" Placeholder="Nome nova pessoa"/>
+                <Label Text="Nome: " BackgroundColor="Aqua" />
+                <Entry Text="{Binding Name}" Placeholder="Nome da pessoa" BackgroundColor="Lavender"/>
                 
-                <Label Text="Dt. Nasc.: " FontSize="Small" />
+                <Label Text="Dt. Nasc.: " BackgroundColor="LightCoral" />
                 <DatePicker x:Name="birthDatePicker"
                             Date="{Binding BirthDate}"
                             MaximumDate= "{Binding Today}"
                             Format="D"
-                            Margin="30, 0, 0, 30"/>
+                            BackgroundColor="AntiqueWhite"
+                            Margin="2, 0, 0, 1"/>
 
-                <Label Text="{Binding Source={x:Reference birthDatePicker}, Path=Date, Converter={StaticResource dateToAge}}" FontSize="Small" />
-                <Button Text="Salvar" Command="{Binding SaveItemCommand}" />
-                <Button Text="Cancelar" Clicked="Button_Clicked" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                    <Label Text="Idade: "/>
+                    <Label Text="{Binding Source={x:Reference birthDatePicker}, Path=Date, Converter={StaticResource dateToAge}}"  />
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="Gênero:"  />
+                    <Picker x:Name="GenderPicker" SelectedIndex="{Binding GenderIndex}">
+                    </Picker>
+                </StackLayout>
+
+                <Label Text="Esquema de Vacinas:"  />
+                <Picker x:Name="SchemaPicker" SelectedIndex="{Binding SchemaIndex}" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                </Picker>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Button Text="Salvar" Clicked="Save_Clicked" />
+                    <Button Text="Cancelar" Clicked="Cancel_Clicked" />
+                </StackLayout>
             </StackLayout>
         </StackLayout>
 

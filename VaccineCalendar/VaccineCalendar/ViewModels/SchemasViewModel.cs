@@ -34,7 +34,7 @@ namespace VaccineCalendar.ViewModels
             try
             {
                 VaccineSchemas.Clear();
-                var items = await CurrentDataStore.CurrentDALC.GetSchemaDBProvider.GetSchemas(null);
+                var items = await CurrentDataStore.CurrentDALC.GetSchemaDBProvider.GetSchemasAsync(null);
                 foreach (var item in items)
                 {
                     VaccineSchemas.Add(item);

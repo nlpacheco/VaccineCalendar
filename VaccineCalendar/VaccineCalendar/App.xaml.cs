@@ -22,22 +22,53 @@ namespace VaccineCalendar
         {
             InitializeComponent();
 
+            var labelStyle = new Style(typeof(Label))
+            {
+                Setters =
+                {
+                    new Setter{Property = Label.FontFamilyProperty, Value = (Device.RuntimePlatform == Device.Android ? "Candara.ttf#Candara" :
+                                                                            (Device.RuntimePlatform == Device.iOS ? "Candara" : null)) }
+                }
+            };
+            var entryStyle = new Style(typeof(Entry))
+            {
+                Setters =
+                {
+                    new Setter{Property = Label.FontFamilyProperty, Value = (Device.RuntimePlatform == Device.Android ? "Candara.ttf#Candara" :
+                                                                            (Device.RuntimePlatform == Device.iOS ? "Candara" : null)) }
+                }
+            };
+            var cellStyle = new Style(typeof(Cell))
+            {
+                Setters =
+                {
+                    new Setter{Property = Label.FontFamilyProperty, Value = (Device.RuntimePlatform == Device.Android ? "Candara.ttf#Candara" :
+                                                                            (Device.RuntimePlatform == Device.iOS ? "Candara" : null)) }
+                }
+            };
+
+            if (Resources == null)
+                Resources = new ResourceDictionary();
+            Resources.Add(labelStyle);
+            Resources.Add(entryStyle);
+            Resources.Add(cellStyle);
+
             CurrentDataStore.CurrentDALC = new FileDataStore();
             MockVaccineDatabase.MockVaccineDataStore();
 
-
-            IDictionary<NavigationController.Map, Type> fullmap = new Dictionary<NavigationController.Map, Type>
-            {
-                { NavigationController.Map.Create(0, typeof(Views.MainPage)), typeof(AboutPage) },
-                { NavigationController.Map.Create(1, typeof(Views.MainPage)), typeof(VaccineListViewPage) }
-            };
+            
+            //IDictionary<NavigationController.Map, Type> fullmap = new Dictionary<NavigationController.Map, Type>
+            //{
+            //    { NavigationController.Map.Create(0, typeof(Views.MainPage)), typeof(AboutPage) },
+            //    { NavigationController.Map.Create(1, typeof(Views.MainPage)), typeof(VaccineListViewPage) }
+            //};
 
 
             //NavigationService = new NavigationService(new MainPage());
             //NavController = new NavigationController(NavigationService, fullmap);
 
 
-            MainPage = new VaccineMasterDetailPage(); //MainPage();
+            MainPage = new MainMasterDetailPage(); //MainPage();
 
             //BeginInvokeOnMainThread
             //Device.BeginInvokeOnMainThread(async () => {

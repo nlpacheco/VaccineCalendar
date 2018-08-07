@@ -6,6 +6,7 @@
              x:Name="FamilyPage"
              xmlns:converters="clr-namespace:VaccineCalendar.Converter">
     <ContentPage.Resources>
+        <StyleSheet Source="/Vaccine.css" />
         <ResourceDictionary>
             <converters:DateToAgeConverter x:Key="dateToAge" />
             <converters:DateToStringConverter x:Key="dateToStr" />

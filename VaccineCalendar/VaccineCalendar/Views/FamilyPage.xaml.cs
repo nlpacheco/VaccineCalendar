@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms.StyleSheets;
+using System.Reflection;
 
 namespace VaccineCalendar.Views
 {
@@ -19,6 +21,10 @@ namespace VaccineCalendar.Views
 		public FamilyPage ()
 		{
 			InitializeComponent ();
+            //<StyleSheet Source="/Vaccine.css" />
+            // this.Resources.Add(StyleSheet.FromAssemblyResource(IntrospectionExtensions.GetTypeInfo(typeof(FamilyPage)).Assembly, "VaccineCalendar.Vaccine.css"));
+
+
             BindingContext = viewModel = new FamilyViewModel();
 		}
 
@@ -34,7 +40,7 @@ namespace VaccineCalendar.Views
         {
             Page page = new FamiliPersonPage(viewModel.ResponsibleUser);
             var familyPersonNav = new NavigationPage(page);
-            await this.Navigation.PushAsync(familyPersonNav);
+            await this.Navigation.PushModalAsync(familyPersonNav);
 
             //            await Navigation.PushModalAsync(new NavigationPage(new FamiliPersonPage(viewModel.ResponsibleUser)));
         }
@@ -44,7 +50,7 @@ namespace VaccineCalendar.Views
                 return;
             Page page = new FamiliPersonPage(person);
             var familyPersonNav = new NavigationPage(page);
-            await this.Navigation.PushAsync(familyPersonNav);
+            await this.Navigation.PushModalAsync(familyPersonNav);
             // await Navigation.PushModalAsync(new NavigationPage(new FamiliPersonPage(person)));
 
             // Manually deselect item.

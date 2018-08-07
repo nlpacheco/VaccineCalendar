@@ -13,10 +13,10 @@ using Xamarin.Forms.Xaml;
 namespace VaccineCalendar.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class VaccineMasterDetailPageMaster : ContentPage
+    public partial class MainMasterDetailPageMenuItems : ContentPage
     {
         public ListView ListView;
-        public VaccineMasterDetailPageMaster()
+        public MainMasterDetailPageMenuItems()
         {
             InitializeComponent();
             BindingContext = new VaccineMasterDetailPageMasterViewModel();

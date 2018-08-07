@@ -9,50 +9,76 @@ using VaccineCalendar.Services.Dalc;
 
 namespace VaccineCalendar.ViewModels
 {
-    public class SchemaDetailViewModel: BaseViewModel
+    public class SchemaDetailViewModel : BaseViewModel
     {
-        private List<SchemaGroup> _groupByVaccine;
-        private List<SchemaGroup> _groupByDate;
 
-
-
-        public List<SchemaGroup> GroupByVaccine
+        public class VaccineGroupByVaccineType
         {
-            get
-            {
-                return _groupByVaccine;
-            }
 
+            public string VaccineName;
+            public IEnumerable<IGrouping<string, SchemaVaccine>> VaccineTypeGroups;
         }
 
-        public List<SchemaGroup> GroupByDate
+        public class VaccineGroupByDateVaccineType
         {
-            get
-            {
-                return _groupByDate;
-            }
+
+            public string DateName;
+            public IEnumerable<VaccineGroupByVaccineType> VaccineNames;
         }
 
+        
+        public IEnumerable<VaccineGroupByVaccineType> GroupByVaccineNameType { get; private set; }
+
+        public IEnumerable<VaccineGroupByDateVaccineType> GroupByDateVaccineNameType { get; private set; }
+
+        
+        //private List<SchemaGroup> _groupByVaccine;
+        //private List<SchemaGroup> _groupByDate;
+        //public List<SchemaGroup> GroupByVaccine
+        //{
+        //    get
+        //    {
+        //        return _groupByVaccine;
+        //    }
+        //}
+        //public List<SchemaGroup> GroupByDate
+        //{
+        //    get
+        //    {
+        //        return _groupByDate;
+        //    }
+        //}
+
+
+        public string SchemaName
+        {
+            get { return _schema.SchemaName; }
+        }
 
         Schema _schema;
 
-        public SchemaDetailViewModel(Schema schema )
+        public SchemaDetailViewModel(Schema schema)
         {
 
             _schema = schema;
-            _groupByDate = new List<SchemaGroup>();
-            _groupByVaccine = new List<SchemaGroup>();
+            //_groupByDate = new List<SchemaGroup>();
+            //_groupByVaccine = new List<SchemaGroup>();
         }
 
         public async Task BuildGroups()
         {
-            //await Task.Factory.StartNew(() => BuildGroupByVaccine());
-            //await Task.Factory.StartNew(() => BuildGroupByDate());
-            //return await task1.;
             try
             {
-                BuildGroupByVaccine();
-                BuildGroupByDate();
+                //BuildGroupByVaccine();
+                //BuildGroupByDate();
+                await Task.Factory.StartNew(() => 
+                    BuildGroupsByVaccineName()
+                )
+                ;
+                await Task.Factory.StartNew(() => 
+                    BuildGroupsByVaccineDates()
+                 )
+                 ;
 
             }
             catch (Exception ex)
@@ -62,71 +88,105 @@ namespace VaccineCalendar.ViewModels
             }
         }
 
-        private void BuildGroupByVaccine()
+
+        private void BuildGroupsByVaccineName()
         {
-            try
-            {
-                foreach (var schemaVaccine in _schema.SchemaVaccines)
-                {
-                    var vaccineList = GroupByVaccine.FirstOrDefault(s => s.Heading == schemaVaccine.VaccineName);
-                    if (vaccineList == null)
-                    {
-                        vaccineList = new SchemaGroup()
-                        {
-                            Heading = schemaVaccine.VaccineName
-                        };
-                        GroupByVaccine.Add(vaccineList);
-                    }
-                    vaccineList.vaccines.Add(schemaVaccine);
 
-                }
+            IEnumerable<IGrouping<string, SchemaVaccine>> t;
+            //IEnumerable<IGrouping<string, IEnumerable<IGrouping<string, SchemaVaccine>>>> a;
+            GroupByVaccineNameType = _schema.SchemaVaccines.GroupBy(x => x.VaccineName)
+                                                            .Select(x => new VaccineGroupByVaccineType
+                                                            {       VaccineName = x.Key,
+                                                                    VaccineTypeGroups = x.ToList().GroupBy(y => y.VaccineTypeGroup)
+                                                            });
+           
+                                }
 
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                throw;
-            }
+
+
+        private void BuildGroupsByVaccineDates()
+        {
+            GroupByDateVaccineNameType = _schema.SchemaVaccines.GroupBy(w => w.DateName)
+                                                                .Select(w=> new VaccineGroupByDateVaccineType
+                                                                {
+                                                                    DateName = w.Key,
+                                                                    VaccineNames = w.ToList().GroupBy( o => o.VaccineName)
+                                                                                                .Select(x => new VaccineGroupByVaccineType
+                                                                                                {
+                                                                                                    VaccineName = x.Key,
+                                                                                                    VaccineTypeGroups = x.ToList().GroupBy(y => y.VaccineTypeGroup)
+                                                                                                })
+
+                                                                });
+
+        }
+
+
+        //private void BuildGroupByVaccine()
+        //{
+        //    try
+        //    {
+        //        foreach (var schemaVaccine in _schema.SchemaVaccines)
+        //        {
+        //            var vaccineList = GroupByVaccine.FirstOrDefault(s => s.Heading == schemaVaccine.VaccineName);
+        //            if (vaccineList == null)
+        //            {
+        //                vaccineList = new SchemaGroup()
+        //                {
+        //                    Heading = schemaVaccine.VaccineName
+        //                };
+        //                GroupByVaccine.Add(vaccineList);
+        //            }
+        //            vaccineList.vaccines.Add(schemaVaccine);
+
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine(ex);
+        //        throw;
+        //    }
              
-        }
+        //}
 
 
-        private void BuildGroupByDate()
-        {
-            try
-            {
-                foreach (var schemaVaccine in _schema.SchemaVaccines)
-                {
-                    var vaccineList = GroupByDate.FirstOrDefault(s => s.Heading == schemaVaccine.DateName);
-                    if (vaccineList == null)
-                    {
-                        vaccineList = new SchemaGroup()
-                        {
-                            Heading = schemaVaccine.DateName
-                        };
-                        GroupByDate.Add(vaccineList);
-                    }
-                    vaccineList.vaccines.Add(schemaVaccine);
+        //private void BuildGroupByDate()
+        //{
+        //    try
+        //    {
+        //        foreach (var schemaVaccine in _schema.SchemaVaccines)
+        //        {
+        //            var vaccineList = GroupByDate.FirstOrDefault(s => s.Heading == schemaVaccine.DateName);
+        //            if (vaccineList == null)
+        //            {
+        //                vaccineList = new SchemaGroup()
+        //                {
+        //                    Heading = schemaVaccine.DateName
+        //                };
+        //                GroupByDate.Add(vaccineList);
+        //            }
+        //            vaccineList.vaccines.Add(schemaVaccine);
 
-                }
+        //        }
 
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                throw;
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine(ex);
+        //        throw;
+        //    }
 
-        }
-
-    }
-
-
-
-    public class SchemaGroup: List<SchemaVaccine>
-    {
-        public string Heading { get; set; }
-        public List<SchemaVaccine> vaccines => this;
+        //}
 
     }
+
+
+
+    //public class SchemaGroup: List<SchemaVaccine>
+    //{
+    //    public string Heading { get; set; }
+    //    public List<SchemaVaccine> vaccines => this;
+
+    //}
 }

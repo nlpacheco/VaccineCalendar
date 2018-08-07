@@ -13,9 +13,10 @@
             <Color x:Key="LightTextColor">#999999</Color>
 
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryDark}" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

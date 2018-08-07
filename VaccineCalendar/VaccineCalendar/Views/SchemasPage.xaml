@@ -3,32 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VaccineCalendar.Views.SchemasPage"
              Title="{Binding Title}">
-  <ListView x:Name="MyListView"
-            ItemsSource="{Binding VaccineSchemas}"
-            ItemSelected="MyListView_ItemSelected"
-            CachingStrategy="RecycleElement">
-            
-    <!--Built in Cells-->
-    <ListView.ItemTemplate>
-        <DataTemplate>
-            <TextCell Text="{Binding SchemaName}" />
-        </DataTemplate>
-    </ListView.ItemTemplate>
-    
-    <!--Custom View Cells-->
-    <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
-  </ListView>
+
+    <ContentPage.Resources>
+        <StyleSheet Source="/Vaccine.css" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Esquemas de Vacinação" StyleClass="PageTitle"/>
+
+            <ListView x:Name="MyListView"
+                        ItemsSource="{Binding VaccineSchemas}"
+                        ItemSelected="MyListView_ItemSelected"
+                        CachingStrategy="RecycleElement">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding SchemaName}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

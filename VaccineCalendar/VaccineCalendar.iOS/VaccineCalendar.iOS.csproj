@@ -95,6 +95,25 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\calibri.ttf" />
+    <BundleResource Include="Resources\calibrib.ttf" />
+    <BundleResource Include="Resources\calibrii.ttf" />
+    <BundleResource Include="Resources\calibril.ttf" />
+    <None Include="Resources\calibrili.ttf" />
+    <BundleResource Include="Resources\calibriz.ttf" />
+    <BundleResource Include="Resources\Candara.ttf" />
+    <BundleResource Include="Resources\Candarab.ttf" />
+    <BundleResource Include="Resources\Candarai.ttf" />
+    <BundleResource Include="Resources\Candaraz.ttf" />
+    <BundleResource Include="Resources\Raleway-Bold.ttf" />
+    <BundleResource Include="Resources\Raleway-ExtraBold.ttf" />
+    <BundleResource Include="Resources\Raleway-ExtraLight.ttf" />
+    <BundleResource Include="Resources\Raleway-Heavy.ttf" />
+    <BundleResource Include="Resources\Raleway-Light.ttf" />
+    <BundleResource Include="Resources\Raleway-Medium.ttf" />
+    <BundleResource Include="Resources\Raleway-Regular.ttf" />
+    <BundleResource Include="Resources\Raleway-SemiBold.ttf" />
+    <BundleResource Include="Resources\Raleway-Thin.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

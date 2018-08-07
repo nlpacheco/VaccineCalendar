@@ -26,12 +26,27 @@ namespace VaccineCalendar.Views
         {
             InitializeComponent();
             viewModel = new FamilyPersonViewModel(familyPerson);
+
+            for (int i = 0; i < viewModel.GenderArray.Length; i++)
+                GenderPicker.Items.Add(viewModel.GenderArray[i]);
+
+            foreach (var schemaName in viewModel.SchemaNamesAvailable)
+            {
+                SchemaPicker.Items.Add(schemaName);
+            }
             BindingContext = viewModel;
         }
-
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void Save_Clicked(object sender, EventArgs e)
         {
-            await((NavigationPage)(this.Parent)).PopAsync();
+            viewModel.ExecuteSaveItemCommand();
+            await this.Navigation.PopModalAsync();
+
+        }
+
+        private async void Cancel_Clicked(object sender, EventArgs e)
+        {
+            await this.Navigation.PopModalAsync();
+
         }
     }
 }

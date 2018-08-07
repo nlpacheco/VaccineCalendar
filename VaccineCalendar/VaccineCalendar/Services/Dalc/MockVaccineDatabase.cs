@@ -35,6 +35,7 @@ namespace VaccineCalendar.Services.Dalc
                 {
                     FamilyId = user.FamilyId,
                     Name = "Joao",
+                    Gender = "M",
                     PersonId = Guid.NewGuid(),
                     BirthDate = new DateTime(2018, 05, 01)
                 },
@@ -43,6 +44,7 @@ namespace VaccineCalendar.Services.Dalc
                 {
                     FamilyId = user.FamilyId,
                     Name = "Maria",
+                    Gender = "F",
                     PersonId = Guid.NewGuid(),
                     BirthDate = new DateTime(2017, 08, 12)
                 },
@@ -52,6 +54,7 @@ namespace VaccineCalendar.Services.Dalc
                 {
                     FamilyId = user.FamilyId,
                     Name = "Fernanda",
+                    Gender = "F",
                     PersonId = Guid.NewGuid(),
                     BirthDate = new DateTime(2016, 02, 27)
                 }

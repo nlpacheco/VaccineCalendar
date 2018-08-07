@@ -11,7 +11,7 @@ namespace VaccineCalendar.Views
     {
         public VaccineMasterDetailPageMenuItem()
         {
-            TargetType = typeof(VaccineMasterDetailPageDetail);
+            TargetType = typeof(MainMasterDetailPageDetail);
         }
         public int Id { get; set; }
         public string Title { get; set; }

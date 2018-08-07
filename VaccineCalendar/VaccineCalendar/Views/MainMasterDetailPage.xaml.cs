@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace VaccineCalendar.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class VaccineMasterDetailPage : MasterDetailPage
+    public partial class MainMasterDetailPage : MasterDetailPage
     {
-        public VaccineMasterDetailPage()
+        public MainMasterDetailPage()
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VaccineCalendar.Views.VaccineMasterDetailPageMaster"
+             x:Class="VaccineCalendar.Views.MainMasterDetailPageMenuItems"
              Title="Master">
   <StackLayout>
     <ListView x:Name="MenuItemsListView"
@@ -9,33 +9,33 @@
               HasUnevenRows="true"
               ItemsSource="{Binding MenuItems}">
       <ListView.Header>
-        <Grid BackgroundColor="#03A9F4">
+        <Grid BackgroundColor="#4a74da">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10"/>
           </Grid.ColumnDefinitions>
           <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
           </Grid.RowDefinitions>
           <Label
               Grid.Column="1"
-              Grid.Row="2"
-              Text="Agenda de Vacinas "
+              Grid.Row="1"
+              Text="Agenda de Vacinas!"
+              FontSize="Medium"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
       </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+            <StackLayout Padding="10,10" HorizontalOptions="FillAndExpand">
               <Label VerticalOptions="FillAndExpand" 
                     VerticalTextAlignment="Center" 
                     Text="{Binding Title}" 
-                    FontSize="24"/>
+                    FontSize="Small"/>
             </StackLayout>
           </ViewCell>
         </DataTemplate>

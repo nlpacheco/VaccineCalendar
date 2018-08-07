@@ -77,6 +77,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\calibri.ttf" />
+    <AndroidAsset Include="Assets\calibrib.ttf" />
+    <AndroidAsset Include="Assets\calibrii.ttf" />
+    <AndroidAsset Include="Assets\calibril.ttf" />
+    <None Include="Assets\calibrili.ttf" />
+    <AndroidAsset Include="Assets\calibriz.ttf" />
+    <AndroidAsset Include="Assets\Candara.ttf" />
+    <AndroidAsset Include="Assets\Candarab.ttf" />
+    <AndroidAsset Include="Assets\Candarai.ttf" />
+    <AndroidAsset Include="Assets\Candaraz.ttf" />
+    <AndroidAsset Include="Assets\Raleway-Bold.ttf" />
+    <AndroidAsset Include="Assets\Raleway-ExtraBold.ttf" />
+    <AndroidAsset Include="Assets\Raleway-ExtraLight.ttf" />
+    <AndroidAsset Include="Assets\Raleway-Heavy.ttf" />
+    <AndroidAsset Include="Assets\Raleway-Light.ttf" />
+    <AndroidAsset Include="Assets\Raleway-Medium.ttf" />
+    <AndroidAsset Include="Assets\Raleway-Regular.ttf" />
+    <AndroidAsset Include="Assets\Raleway-SemiBold.ttf" />
+    <AndroidAsset Include="Assets\Raleway-Thin.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

@@ -5,6 +5,10 @@
              xmlns:vm="clr-namespace:VaccineCalendar.ViewModels"
              x:Name="VaccinePage"
              Title="{Binding Title}">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Vaccine.css" />
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="VaccineListView" 
@@ -19,11 +23,10 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10">
+                            <StackLayout Padding="3">
                                 <Label Text="{Binding Name}" 
                                    LineBreakMode="NoWrap" 
-                                   Style="{DynamicResource ListItemTextStyle}" 
-                                   FontSize="Small" />
+                                   StyleClass="vaccineName" />
                                 <!--<Label Text="{Binding Description}" 
                                    LineBreakMode="WordWrap"
                                    Style="{DynamicResource ListItemDetailTextStyle}"

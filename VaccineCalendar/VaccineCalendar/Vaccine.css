@@ -1,0 +1,96 @@
+﻿^contentpage {
+    background-color: floralwhite;
+}
+
+stacklayout label {
+    font-style: initial;
+    font-size: 8;
+    text-align: left;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1;
+    padding-bottom: 1;
+}
+
+stacklayout entry {
+    font-style: initial;
+    font-size: 10;
+    text-align: left;
+    color: blue;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+stacklayout DatePicker {
+    font-style: initial;
+    font-size: micro;
+    text-align: left;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1;
+    padding-bottom: 1;
+}
+
+
+.PageTitle {
+    font-style: bold;
+    font-size: medium;
+    text-align: center;
+    background-color: dodgerblue;
+    color:white;
+}
+
+.detailPageTitle {
+    padding-top: 10;
+    font-style: bold;
+    font-size: medium;
+    text-align: left;
+    background-color: lightblue;
+}
+
+.detailPageSubtitle {
+    text-align: left;
+    font-style: initial;
+    font-size: small;
+    background-color: lightcyan;
+}
+
+
+
+.schemaVaccineTitle {
+    padding-top: 10;
+    text-align: left;
+    font-style: bold;
+    font-size: small;
+    color: white;
+    background-color: dodgerblue;
+}
+
+.schemaVariantTitle {
+    padding-left: 10;
+    text-align: left;
+    font-style: initial;
+    font-size: small;
+    background-color: lightblue;
+}
+
+.schemaVaccineDate {
+    padding-left: 20;
+    text-align: left;
+    font-style: initial;
+    font-size: small;
+    background-color: lightcyan;
+}
+
+.vaccineName {
+    padding-top: 10;
+    text-align: left;
+    font-style: bold;
+    font-size: small;
+    color: darkblue;
+    background-color: white;
+}

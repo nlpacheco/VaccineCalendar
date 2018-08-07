@@ -4,6 +4,9 @@
              x:Class="VaccineCalendar.Views.AboutPage"
              xmlns:vm="clr-namespace:VaccineCalendar.ViewModels"
              Title="{Binding Title}">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Vaccine.css" />
+    </ContentPage.Resources>
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
